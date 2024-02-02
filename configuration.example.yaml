@@ -1,7 +1,0 @@
-# Configuration file for ZiplineBot 
-
-# Discord bot config
-discord_token: "YOUR-TOKEN-HERE" # Put your bot token from the Discord Developer Portal. DO NOT SHARE THIS WITH ANYONE!
-prefix: "img!" # You will always be able to use slash commands or ping the bot to use commands.
-bot_owner: 0000000 # Put your user ID here. This user will be able to whitelist guilds and globally blacklist users. You can use developer mode to do so.
-ignore_bots: true # If commands issued by other bots should be ignored. Only disable if needed.
