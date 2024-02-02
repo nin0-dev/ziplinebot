@@ -3,7 +3,7 @@ from discord.ext import commands
 import yaml
 import os
 import cogs
-from util import log, LogType
+from util import log, LogType, embed, EmbedType
 
 # Load global config
 try:
@@ -40,9 +40,6 @@ if config["bot_owner"] == 0000000:
 # Error handling
 @client.event
 async def on_command_error(ctx, error: discord.DiscordException):
-    errorembed = discord.Embed()
-    errorembed = discord.Embed(color=0xffbcbc, title=":x: An error occured")
-    errorembed.description = "Here are the error details: \n```" + str(error) + "```"
-    await ctx.reply(embed=errorembed, mention_author=False)
+    await ctx.reply(embed=embed("An error occured", f"Here are the error details: \n```{str(error)}```", EmbedType.ERROR), mention_author=False)
 
 client.run(config["discord_token"])
