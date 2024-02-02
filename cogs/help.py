@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
+import yaml
 
 # Load global config
 config_file = open("configuration.yaml", "r")
@@ -16,7 +17,8 @@ class Help(commands.Cog):
     @commands.command(brief="Leave a guild.")
     @commands.is_owner()
     async def leave_guild(self, ctx, id: str):
-        await ctx.reply("Pong!", mention_author=False)
+        to_leave = ctx.bot.get_guild(int(id))
+        await to_leave.leave()
         
 
 def setup(bot): 
